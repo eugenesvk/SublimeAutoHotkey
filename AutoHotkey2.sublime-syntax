@@ -8,11 +8,7 @@ version          : 2
 extends          : Packages/SublimeAutoHotkey/AutoHotkey.sublime-syntax
 
 contexts:
-  main             :
-    - meta_append  : true
-    - include      : strings
-
-  strings:
+  string:
     - include: string-quoted-double
     - include: string-quoted-single
 
