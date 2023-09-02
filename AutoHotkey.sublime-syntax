@@ -8,6 +8,13 @@ scope: source.ahk
 version: 2
 contexts:
   main:
+    - include      : comment
+    - include      : function
+    - include      : keyword
+    - include      : punctuation
+    - include      : string
+
+  comment:
     - match: (^\s*|\s+)(;)(.*)(\n?)$
       scope: comment.line.ahk
       captures:
@@ -18,6 +25,7 @@ contexts:
         - meta_scope: comment.block.ahk
         - match: ^\s*\*/
           pop: true
+  function:
     - match: '^(?i)\s*((?!if|while)\w+)(\()(.*)(\))\s*({)\s*(;?.*)$'
       scope: functionline.ahk
       captures:
@@ -38,6 +46,7 @@ contexts:
       captures:
         1: entity.name.function.label.ahk
         2: punctuation.definition.equals.colon
+  keyword:
     - match: ^\s*(#)((?i:includeagain|include))\s+(.*?)\s*(;.*)?$
       scope: importline.ahk
       captures:
@@ -81,6 +90,7 @@ contexts:
       scope: constant.numeric.ahk
     - match: \+|-|\*|\^|/|&|#|!|~|\|
       scope: keyword.operator.arithmetic.ahk
+  punctuation:
     - match: ':=|\.=|=|::'
       scope: punctuation.definition.equals.ahk
     - match: '<|>|<>|[<>=]=|!='
@@ -91,6 +101,7 @@ contexts:
       scope: punctuation.bracket.ahk
     - match: '%'
       scope: punctuation.definition.variable.percent.ahk
+  string:
     - match: (")
       captures:
         1: punctuation.definition.string.ahk
