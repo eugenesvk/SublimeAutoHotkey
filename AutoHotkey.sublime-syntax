@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
 # http://www.sublimetext.com/docs/syntax.html
-name: AutoHotkey
+name: AutoHotkey1
 file_extensions:
   - ahk
 scope: source.ahk
