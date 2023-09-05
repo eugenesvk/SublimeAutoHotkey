@@ -7,6 +7,9 @@ scope            : source.ahk
 version          : 2
 extends          : Packages/SublimeAutoHotkey/AutoHotkey.sublime-syntax
 
+variables:
+  escape_chars: '[`;:{nrbtsvaf"'']' # autohotkey.com/docs/v2/misc/EscapeChar.htm
+
 contexts:
   string:
     - include: string-quoted-double
@@ -18,7 +21,7 @@ contexts:
         1: punctuation.definition.string.begin.ahk
       push:
         - meta_scope: string.quoted.double.ahk
-        - match: (`)(")
+        - match: (`)({{escape_chars}})
           captures:
             1: constant.character.escape.ahk
             2: constant.character.escape.ahk
@@ -35,7 +38,7 @@ contexts:
         1: punctuation.definition.string.begin.ahk
       push:
         - meta_scope: string.quoted.single.ahk
-        - match: (`)(')
+        - match: (`)({{escape_chars}})
           captures:
             1: constant.character.escape.ahk
             2: constant.character.escape.ahk
