@@ -5,7 +5,7 @@ file_extensions  : [ahk]
 first_line_match : '^#Requires AutoHotKey v?2[\d\.\-a-z]*'
 scope            : source.ahk
 version          : 2
-extends          : Packages/SublimeAutoHotkey/AutoHotkey.sublime-syntax
+extends          : Packages/AutoHotkey/AutoHotkey.sublime-syntax
 
 variables:
   escape_chars: '[`;:{nrbtsvaf"'']' # autohotkey.com/docs/v2/misc/EscapeChar.htm
