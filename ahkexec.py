@@ -34,7 +34,7 @@ class ahkrun(sublime_plugin.WindowCommand):
 		else:
 			filepath = self.window.active_view().file_name()
 			cmd = [AutoHotKeyExePath, "/ErrorStdOut", filepath]
-			regex = "(.*) \(([0-9]*)\)() : ==> (.*)"
+			regex = r"(.*) \(([0-9]*)\)() : ==> (.*)"
 			self.window.run_command("exec", {"cmd": cmd, "file_regex": regex})
 
 #---------------------------------------------------------------
