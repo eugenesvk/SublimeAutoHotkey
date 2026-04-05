@@ -1,9 +1,9 @@
 %YAML 1.2
 ---
 name             : AutoHotkey                          # extends the AutoHotkey package with v2-specific contexts
-file_extensions  : [ahk]
+file_extensions  : [ahk,ahk2]
 first_line_match : '^#Requires AutoHotKey v?2[\d\.\-a-z]*'
-scope            : source.ahk
+scope            : source.ahk.2
 version          : 2
 extends          : Packages/AutoHotkey/AutoHotkey.sublime-syntax
 
